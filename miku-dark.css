@@ -1,0 +1,143 @@
+/* MIKU / 01 · 1.0.1 · Codex 26.1023.51421
+ * No assets, fonts, network requests, scripts or looping animations.
+ * The root guard is intentional: nested dark code blocks in light mode must not activate it.
+ */
+:root[data-theme="dark"] {
+  --miku-bg: #10171b;
+  --miku-panel: #172126;
+  --miku-sidebar: #121c21;
+  --miku-text: #e2eef0;
+  --miku-muted: #9aafb5;
+  --miku-accent: #39c5bb;
+  --miku-pink: #e86098;
+  --miku-border: #30444b;
+  --miku-hover: #1c3035;
+  --app-color-background-surface: var(--miku-bg) !important;
+  --app-color-background-surface-under: #0c1216 !important;
+  --app-color-background-shell: #0c1216 !important;
+  --app-color-background-editor-opaque: #141d22 !important;
+  --app-color-background-control: var(--miku-panel) !important;
+  --color-background-control-opaque: var(--miku-panel) !important;
+  --app-color-background-elevated-primary: #1c2a30 !important;
+  --app-color-background-elevated-primary-opaque: #1c2a30 !important;
+  --app-color-background-elevated-secondary: var(--miku-panel) !important;
+  --app-color-background-elevated-secondary-opaque: var(--miku-panel) !important;
+  --app-color-background-elevated-tertiary-opaque: #141d22 !important;
+  --app-color-background-application-menu: #172126 !important;
+  --app-color-foreground-application-menu: var(--miku-text) !important;
+  --app-color-border: var(--miku-border) !important;
+  --app-color-border-heavy: #45616a !important;
+  --app-color-border-light: #24353c !important;
+  --app-color-border-focus: var(--miku-accent) !important;
+  --app-color-border-application-menu-separator: var(--miku-border) !important;
+  --app-color-text-foreground: var(--miku-text) !important;
+  --app-color-text-foreground-secondary: #a9bec3 !important;
+  --app-color-text-foreground-tertiary: var(--miku-muted) !important;
+  --app-color-icon-primary: #c9dce0 !important;
+  --app-color-icon-secondary: #a9bec3 !important;
+  --app-color-icon-tertiary: var(--miku-muted) !important;
+  --app-color-accent-blue: var(--miku-accent) !important;
+  --app-color-accent-purple: var(--miku-pink) !important;
+  --app-color-text-accent: #69d9d0 !important;
+  --app-color-icon-accent: #69d9d0 !important;
+  --app-color-text-on-accent: #0c2427 !important;
+  --app-color-background-accent: #153a3b !important;
+  --app-color-background-accent-hover: #1b4747 !important;
+  --app-color-background-accent-active: #225454 !important;
+  --app-color-background-button-primary: var(--miku-accent) !important;
+  --app-color-background-button-primary-hover: #69d9d0 !important;
+  --app-color-background-button-primary-active: #2fb0a7 !important;
+  --app-color-background-button-primary-inactive: #263b40 !important;
+  --app-color-text-button-primary: #0c2427 !important;
+  --app-color-background-button-secondary: #1b2a30 !important;
+  --app-color-background-button-secondary-hover: #243b42 !important;
+  --app-color-background-button-secondary-active: #29474d !important;
+  --app-color-background-button-secondary-inactive: #1b272c !important;
+  --app-color-text-button-secondary: var(--miku-text) !important;
+  --app-color-background-button-tertiary: transparent !important;
+  --app-color-background-button-tertiary-hover: var(--miku-hover) !important;
+  --app-color-background-button-tertiary-active: #243e43 !important;
+  --app-color-text-button-tertiary: var(--miku-muted) !important;
+  --app-color-decoration-added: #6cd6a4 !important;
+  --app-color-decoration-deleted: #f08080 !important;
+  --app-color-editor-added: #18382e !important;
+  --app-color-editor-deleted: #3b252c !important;
+  --color-background-composer-primary: var(--miku-accent) !important;
+  --color-text-composer-primary: #0c2427 !important;
+  --color-background-composer-action-bar: var(--miku-panel) !important;
+  --color-background-panel: var(--miku-panel) !important;
+  --color-background-text-selection: #28535a !important;
+  --color-background-user-message: #1a3035 !important;
+  --color-text-user-message: var(--miku-text) !important;
+  --color-background-accent-action: var(--miku-accent) !important;
+  --color-text-accent-action: #0c2427 !important;
+  --color-text-info: #69d9d0 !important;
+  --color-text-info-solid: #0c2427 !important;
+  --color-background-info-solid: var(--miku-accent) !important;
+  --color-background-info-soft: #153a3b !important;
+  --color-background-info-soft-hover: #1b4747 !important;
+  --color-text-success: #6cd6a4 !important;
+  --color-text-danger: #f08080 !important;
+  --color-text-warning: #e3c687 !important;
+  --color-text-disabled: #81979e !important;
+  --app-color-text-success: #6cd6a4 !important;
+  --app-color-text-error: #f08080 !important;
+  --app-color-text-warning: #e3c687 !important;
+  --app-color-icon-success: #6cd6a4 !important;
+  --app-color-icon-error: #f08080 !important;
+  --app-color-icon-warning: #e3c687 !important;
+}
+
+/* Keep sidebar chrome neutral across expanded sidebars and the compact navigation rail.
+ * No header badges, reserved padding, twin rails or corner contours.
+ */
+:root[data-theme="dark"] aside[data-app-shell-left-panel-appearance] {
+  background-color: var(--miku-sidebar) !important;
+  border-inline-end: 1px solid #29434a;
+}
+
+:root[data-theme="dark"] [data-sidebar-cycle-item][aria-current="page"] {
+  background-color: #193338 !important;
+  color: #c8f4ee !important;
+  box-shadow: inset 2px 0 0 var(--miku-accent);
+}
+:root[data-theme="dark"] [data-sidebar-cycle-item]:not([aria-current="page"]):not(:disabled):hover {
+  background-color: var(--miku-hover) !important;
+}
+
+/* Target the inner composer surface, not the outer portals/attachment area. */
+:root[data-theme="dark"] [data-codex-composer-root]:not(:has([data-codex-composer-root])) {
+  border: 1px solid #386166 !important;
+  border-radius: 16px 6px 16px 6px;
+  background-color: var(--miku-panel) !important;
+  box-shadow: inset 0 1px 0 #39c5bb12;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+:root[data-theme="dark"] [data-codex-composer-root]:not(:has([data-codex-composer-root])):focus-within {
+  border-color: var(--miku-accent) !important;
+  box-shadow: 0 0 0 2px #39c5bb14, inset 0 1px 0 #39c5bb18;
+}
+:root[data-theme="dark"] [data-codex-composer-root]:not(:has([data-codex-composer-root])):has([contenteditable="false"]) {
+  border-color: #30444b !important;
+}
+
+/* Only toolbar/menu controls get a new transition; no global layout or font reset. */
+:root[data-theme="dark"] :is([data-sidebar-cycle-item], [data-composer-navigation-target], [role="menuitem"]) {
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+:root[data-theme="dark"] :is([role="menu"], [role="dialog"], [role="alertdialog"]) {
+  border-color: var(--miku-border) !important;
+}
+:root[data-theme="dark"] [data-sidebar-cycle-item]:focus-visible {
+  outline: 2px solid var(--miku-accent);
+  outline-offset: -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="dark"] :is([data-codex-composer-root], [data-sidebar-cycle-item], [data-composer-navigation-target], [role="menuitem"]) {
+    transition: none !important;
+  }
+}
+@media (forced-colors: active) {
+  :root[data-theme="dark"] [data-sidebar-cycle-item][aria-current="page"] { outline: 1px solid Highlight; }
+}

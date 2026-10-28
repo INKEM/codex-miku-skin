@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>MIKU / 01 — Codex 皮肤预览</title>
+  <link rel="stylesheet" href="preview.css">
+  <link rel="stylesheet" href="miku-dark.css">
+</head>
+<body>
+  <div class="preview-notice"><span>LOCAL SPECIMEN <b>／</b> 本地效果预览，非 Codex 实时界面</span><div><button id="layout" title="切换无内部侧栏的页面布局">仅导航栏</button><button id="zoom" title="切换 125% 页面缩放样本">125%</button><button id="narrow" title="切换窄窗口布局">窄窗</button><button id="theme">切换浅色</button></div></div>
+  <div class="shell" data-app-shell-frame>
+    <aside data-app-shell-left-panel-appearance="content-surface">
+      <nav class="global-rail" aria-label="全局导航"><button title="首页">⌂</button><button title="图像" aria-current="page">▧</button><button title="历史">◷</button><button title="资料库">▥</button><button title="更多">···</button></nav>
+      <div class="sidebar-header" data-sidebar-header-search="false"><a class="wordmark" href="#">Codex <span>⌘</span></a><button class="new-chat">＋ 新对话</button></div>
+      <nav aria-label="对话导航">
+        <span class="section-label">工作区</span>
+        <button data-sidebar-cycle-item aria-current="page"><span>◇</span> MIKU / 01 <small>⌘ 1</small></button>
+        <button data-sidebar-cycle-item><span>⌁</span> 探索与灵感</button>
+        <button data-sidebar-cycle-item><span>◷</span> 自动化</button>
+        <div class="section-label recent-label">最近的对话 <span>＋</span></div>
+        <button data-sidebar-cycle-item>初音未来主题设计 <i class="thread-dot"></i></button>
+        <button data-sidebar-cycle-item>整理组件与设计变量</button>
+        <button data-sidebar-cycle-item>构建安静的工作台</button>
+        <button data-sidebar-cycle-item disabled>已归档的项目</button>
+      </nav>
+      <div class="sidebar-footer"><div class="avatar">i</div><div>我的工作台<small>LOCAL WORKSPACE</small></div><button id="settings" title="打开设置预览">⚙</button></div>
+    </aside>
+    <main data-app-shell-main-surface="default">
+      <header class="topbar"><div><span class="breadcrumb">工作区</span><span class="slash">/</span><strong>初音未来主题设计</strong></div><div class="topbar-actions"><span class="local-state"><i></i> 本地</span><button id="review" aria-pressed="false">查看变更 <span>＋2</span></button><button id="menu-toggle" aria-expanded="false" aria-controls="preview-menu" title="打开更多菜单">···</button></div></header>
+      <div id="preview-menu" role="menu" hidden><button role="menuitem" id="long-chat">添加长对话样本</button><button role="menuitem" id="clear-chat">重置对话样本</button><button role="menuitem" id="dialog-open">查看设置弹窗</button></div>
+      <div class="workspace">
+        <section class="conversation" aria-label="聊天预览">
+          <div class="chat-scroll" id="chat-scroll"><div class="chat-content">
+            <div class="conversation-kicker"><span class="diamond">◇</span> 空间留给想法 <span class="kicker-line"></span></div>
+            <div class="user-message">做一个初音未来主题的暗色皮肤。<br>用几何、字符和配色，让工作台有一点未来感。</div>
+            <article class="assistant-message"><div class="assistant-heading"><span class="assistant-symbol">✳</span><span>Codex</span><span class="message-time">刚刚</span></div><h1>把未来感，藏进细节里。</h1><p>以深石墨作为安静的底色，让初音青连接选中状态、焦点与操作。洋红只在边缘留下一个很小的节拍。</p><p>让初音青、洋红与局部切角承载主题。侧栏保留原生布局，文字和代码拥有完整的呼吸空间。</p>
+              <div class="code-block" data-code-block data-theme="dark"><div class="code-header"><span>theme.css</span><button class="copy-button" title="复制配色示例">复制</button></div><pre><code><span class="syntax-comment">/* A quiet rhythm for your workspace. */</span>
+<span class="syntax-name">:root</span> {
+  <span class="syntax-key">--surface</span>:  <span class="syntax-string">#10171b</span>;
+  <span class="syntax-key">--accent</span>:   <span class="syntax-string">#39c5bb</span>;
+  <span class="syntax-key">--detail</span>:   <span class="syntax-string">#e86098</span>;
+}</code></pre></div>
+              <div class="result-line"><span class="success">✓</span> 配色与交互状态已统一 <span class="small-separator">·</span><span class="subtle">没有图片资源</span></div>
+              <div class="message-actions"><button class="copy-button" title="复制消息">▣</button><button title="喜欢">♡</button></div>
+            </article>
+            <div id="extra-messages"></div>
+          </div></div>
+          <div class="composer-area"><div data-codex-composer-root data-composer-placement="main"><div class="composer-input" contenteditable="true" role="textbox" aria-label="消息输入框" aria-multiline="true" data-placeholder="把下一个想法，写在这里。"></div><div class="composer-toolbar"><div><button title="添加附件">＋</button><button data-composer-navigation-target="environment">⌘ 工作区</button></div><div><button data-composer-navigation-target="model">Codex <span>⌄</span></button><button class="send" title="发送预览消息">↑</button></div></div></div><div class="composer-caption"><span>⌘ Enter 发送</span><span>静かなコード、未来のリズム。</span></div></div>
+        </section>
+        <section class="review-pane" aria-label="代码变更预览" hidden><div class="review-heading"><strong>变更</strong><span>1 个文件</span></div><div class="review-file">theme.css <small><span class="success">＋2</span> <span class="error">−1</span></small></div><pre class="diff"><span class="diff-context"> 1   :root {</span>
+<span class="diff-removed"> 2 −   --accent: #339cff;</span>
+<span class="diff-added"> 2 +   --accent: #39c5bb;</span>
+<span class="diff-added"> 3 +   --detail: #e86098;</span>
+<span class="diff-context"> 4   }</span></pre><div class="review-note">颜色与 ＋ / − 符号共同区分变更。</div><div class="state-card"><span class="success">✓ 检查完成</span><span class="warning">△ 警告状态样本</span><span class="error">× 错误状态样本</span><button disabled>不可用的操作</button></div></section>
+      </div>
+    </main>
+  </div>
+  <dialog id="appearance-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><div><span class="eyebrow">APPEARANCE</span><h2 id="dialog-title">安静一点，未来一点。</h2></div><button id="dialog-close" title="关闭设置">×</button></div><p>MIKU / 01 · 深色工作台</p><div class="swatches"><span style="--swatch:#10171b">石墨</span><span style="--swatch:#39c5bb">初音青</span><span style="--swatch:#e86098">洋红</span></div><div class="dialog-row"><span>装饰动效</span><span class="subtle">静态</span></div><div class="dialog-row"><span>资源形式</span><span class="subtle">CSS · 配色 · 局部切角</span></div><button id="dialog-done" class="primary">回到工作台</button></dialog>
+  <script>
+    // Preview controls only. This script is never injected into Codex.
+    const root = document.documentElement;
+    const dialog = document.querySelector('dialog');
+    document.querySelector('#theme').onclick = () => { const dark = root.dataset.theme !== 'dark'; root.dataset.theme = dark ? 'dark' : 'light'; document.querySelector('#theme').textContent = dark ? '切换浅色' : '切换暗色'; };
+    document.querySelector('#layout').onclick = e => { const compact = document.body.classList.toggle('rail-only'); e.currentTarget.textContent = compact ? '内部侧栏' : '仅导航栏'; };
+    document.querySelector('#narrow').onclick = () => document.body.classList.toggle('narrow');
+    document.querySelector('#zoom').onclick = e => { const zoomed = document.body.classList.toggle('zoomed'); e.currentTarget.textContent = zoomed ? '100%' : '125%'; };
+    document.querySelector('#review').onclick = e => { const button = e.currentTarget; const pane = document.querySelector('.review-pane'); pane.hidden = !pane.hidden; button.setAttribute('aria-pressed', String(!pane.hidden)); };
+    const menu = document.querySelector('#preview-menu');
+    function setMenuOpen(open) { menu.hidden = !open; document.querySelector('#menu-toggle').setAttribute('aria-expanded', String(open)); }
+    document.querySelector('#menu-toggle').onclick = () => setMenuOpen(menu.hidden);
+    document.addEventListener('click', e => { if (!e.target.closest('#preview-menu, #menu-toggle')) setMenuOpen(false); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenuOpen(false); });
+    function openDialog() { setMenuOpen(false); dialog.showModal(); }
+    document.querySelector('#settings').onclick = openDialog;
+    document.querySelector('#dialog-open').onclick = openDialog;
+    document.querySelector('#dialog-close').onclick = document.querySelector('#dialog-done').onclick = () => dialog.close();
+    document.querySelector('#long-chat').onclick = () => { const extra = document.querySelector('#extra-messages'); for (let i = 0; i < 12; i++) { const p = document.createElement('p'); p.className = 'long-sample'; p.textContent = `样本 ${i + 1} / 长对话仍然保持正常滚动。背景没有网格或装饰覆盖，信息清楚、安静、有序。`; extra.appendChild(p); } setMenuOpen(false); document.querySelector('#chat-scroll').scrollTop = 99999; };
+    document.querySelector('#clear-chat').onclick = () => { document.querySelector('#extra-messages').replaceChildren(); setMenuOpen(false); };
+    document.querySelectorAll('.copy-button').forEach(b => b.onclick = async () => { const label = b.textContent; const text = b.closest('[data-code-block]')?.querySelector('pre')?.innerText ?? document.querySelector('.assistant-message').innerText; try { await navigator.clipboard.writeText(text); b.textContent = '已复制'; } catch { b.textContent = '无法复制'; } setTimeout(() => b.textContent = label, 1200); });
+    document.querySelector('.send').onclick = () => { const input = document.querySelector('[contenteditable]'); if (!input.textContent.trim()) return; const msg = document.createElement('p'); msg.className = 'user-message'; msg.textContent = input.textContent; document.querySelector('#extra-messages').append(msg); input.textContent = ''; document.querySelector('#chat-scroll').scrollTop = 99999; };
+  </script>
+</body>
+</html>
